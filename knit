@@ -1,0 +1,9 @@
+#!/usr/bin/Rscript
+
+library(knitr)
+opts_chunk$set(eval = FALSE)
+rmd = paste("```\n%load_ext rmagic\n```\n\n", 
+  paste(readLines('example.Rmd'), collapse = '\n'),
+  collapse = '\n'
+)
+knit(text = rmd, output = 'example.md')
